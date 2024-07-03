@@ -3,10 +3,14 @@
 using namespace std;
 class Acc : public NewUser
 {	
-	string& _pwd;
+	string& _pswd;
 public:  
-	Acc(string& acc, string& pwd);
+	Acc(string& acc, string& pswd);
 	void Show() override;
-~Acc() {};
+	const  string get_Pswd() const;
+	void set_Pswd(const string pswd);
+	~Acc() {};;
+
+
 };
 

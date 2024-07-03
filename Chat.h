@@ -4,7 +4,7 @@ using namespace std;
 class Chat
 {
 	string& _chat;
-   public:	
+   public:
 	Chat(string& chat);
 	void ShowC();
 	~Chat() {};
