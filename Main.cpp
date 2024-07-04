@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
+	setlocale(LC_ALL, "ru_RU.UTF-8");
 	vector <string> allusrs;
 	vector <string> allmsgs;
 	NewUser* usr[2];
