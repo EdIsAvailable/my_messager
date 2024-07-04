@@ -10,7 +10,7 @@ int main()
 	setlocale(LC_ALL, "ru_RU.UTF-8");
 	vector <string> allusrs;
 	vector <string> allmsgs;
-	NewUser* usr[2];
+	Acc* usr[2];
 	string n_name;
 	string u_pswd;
 	string newmsgs;
@@ -33,7 +33,7 @@ int main()
 
 		std::cout << "создайте пароль " << endl;
 		std::cin >> u_pswd;
-		//usr[0]->set_Pswd((u_pswd));
+		usr[0]->set_Pswd((u_pswd));
 		usr[0]->Show();
 	}
 
