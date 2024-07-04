@@ -3,7 +3,7 @@
 using namespace std;
 Acc::Acc(string& acc, string& pswd) : NewUser(acc), _pswd(pswd)
 {}
-void Acc::Show (){ cout <<"Ïàðîëü "<< _pswd << endl; }
+void Acc::Show (){ cout <<"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ "<< _pswd << endl; }
 const  string Acc::get_Pswd() const
 {
 	return _pswd;
@@ -19,5 +19,5 @@ const  string NewUser::get_Acc() const
 void NewUser::set_Acc(const string acc)
 {
 	//_acc = acc;
-	cout << "Íèêíåéì:  " << _acc<< endl;
+	cout << "ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼:  " << _acc<< endl;
 }

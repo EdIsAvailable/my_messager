@@ -20,18 +20,18 @@ int main()
 	
 	char switchLogon, switchLogoff;
 	
-	cout <<"Ñîçäàòü àêêàóíò ââåäèòå: 'c'" << endl;
-	cout <<"Àâòîðèçîâàòüñÿ ââåäèòå:  'l'" << endl;
+	cout <<"Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ: 'c'" << endl;
+	cout <<"ÐÐ²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ð°Ñ‚ÑŒÑÑ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ:  'l'" << endl;
 	std::cin >> switchLogon;
 	switch(switchLogon)
 	{
 	case 'c':
 	{
-		std::cout << "ïðèäóìàéòå íèêíåéì " << endl;
+		std::cout << "Ð¿Ñ€Ð¸Ð´ÑƒÐ¼Ð°Ð¹Ñ‚Ðµ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼ " << endl;
 		std::cin >> n_name;
 		usr[0]->set_Acc((n_name));
 
-		std::cout << "ñîçäàéòå ïàðîëü " << endl;
+		std::cout << "ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ " << endl;
 		std::cin >> u_pswd;
 		//usr[0]->set_Pswd((u_pswd));
 		usr[0]->Show();
@@ -39,11 +39,11 @@ int main()
 
 	case 'l':
 	{
-		std::cout << "ââåäèòå íèêíåéì " << endl;
+		std::cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼ " << endl;
 		std::cin >> n_name;
 		 //if (n_name == c)
 		
-		std::cout << "ââåäèòå ïàðîëü " << endl;
+		std::cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ " << endl;
 		std::cin >> u_pswd;
 	}
 	c->ShowC();

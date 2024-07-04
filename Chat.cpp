@@ -4,4 +4,4 @@ using namespace std;
 
 Chat::Chat(string& chat) :  _chat(chat){}
 
-void Chat::ShowC() { cout << "÷àò: " <<_chat << endl; }
+void Chat::ShowC() { cout << "Ñ‡Ð°Ñ‚: " <<_chat << endl; }
