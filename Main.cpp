@@ -11,12 +11,13 @@ int main()
 	vector <string> allusrs;
 	vector <string> allmsgs;
 	Acc* usr[2];
+	Chat* cht[2];
 	string n_name;
 	string u_pswd;
 	string newmsgs;
 
 	usr[0] = new Acc((n_name),(u_pswd));
-	Chat* c = new Chat ((newmsgs));
+	cht[0] = new Chat((newmsgs));
 	
 	char switchLogon, switchLogoff;
 	
@@ -46,13 +47,13 @@ int main()
 		std::cout << "введите пароль " << endl;
 		std::cin >> u_pswd;
 	}
-	c->ShowC();
+	cht[0]->ShowC();
 	std::cin >> newmsgs;
 	default:
 		break;
 	}
 	
 	delete usr[0];
-	delete c;
+	delete cht[0];
 	return 0;
 };
