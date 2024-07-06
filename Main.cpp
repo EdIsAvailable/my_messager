@@ -8,20 +8,16 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "ru_RU.UTF-8");
-	vector <string> allusrs;
-	vector <string> allmsgs;
 	// User ID
 	int user_id = 0;
-	Acc* usr[20]; // Пока максимальный UserID = 20
+	Acc* usr[2]; // минммум 2 юзера
 	Chat* cht[2];
 	string n_name;
 	string u_pswd;
 	string u_name;
 	string newmsgs;
 
-	//usr[0] = new Acc((n_name),(u_pswd),(u_name));
-
-	usr[0] = new Acc((n_name),(u_pswd))
+	usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	cht[0] = new Chat((newmsgs));
 	vector <Acc *> allusrs;
 	allusrs.push_back(usr[0]);
@@ -44,12 +40,12 @@ int main()
 
 		std::cout << "создайте пароль " << endl;
 		std::cin >> u_pswd;
-		//usr[0]->set_Pswd((u_pswd));
-		//usr[0]->Show();
+		usr[0]->set_Pswd((u_pswd));
+		usr[0]->Show();
 
 		std::cout << "ваше имя: ";
 		std::cin >> u_name;
-		//usr[0]->set_Acc((n_name));
+		usr[0]->set_Acc((n_name));
 
 		if (user_id<20)
 		{
