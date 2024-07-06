@@ -1,7 +1,8 @@
 #include "Acc.h"
 #include <iostream>
 using namespace std;
-Acc::Acc(string& acc, string& pswd) : NewUser(acc), _pswd(pswd)
+
+Acc::Acc(string& acc, string& pswd, string& name) : NewUser(acc), _pswd(pswd), _name(name)
 {}
 void Acc::Show (){ cout <<"Пароль "<< _pswd << endl; }
 const  string Acc::get_Pswd() const
