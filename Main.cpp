@@ -8,17 +8,15 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "ru_RU.UTF-8");
-	vector <string> allusrs;
-	vector <string> allmsgs;
 	Acc* usr[2];
 	Chat* cht[2];
 	string n_name;
 	string u_pswd;
 	string newmsgs;
-
 	usr[0] = new Acc((n_name),(u_pswd));
 	cht[0] = new Chat((newmsgs));
-	
+	vector <Acc> allusrs;
+	vector <Chat> allmsgs;
 	char switchLogon, switchLogoff;
 	
 	cout <<"Создать аккаунт введите: 'c'" << endl;
