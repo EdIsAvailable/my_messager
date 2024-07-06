@@ -14,9 +14,10 @@ int main()
 	Chat* cht[2];
 	string n_name;
 	string u_pswd;
+	string u_name;
 	string newmsgs;
 
-	usr[0] = new Acc((n_name),(u_pswd));
+	usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	cht[0] = new Chat((newmsgs));
 	
 	char switchLogon, switchLogoff;
