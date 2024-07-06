@@ -15,8 +15,10 @@ int main()
 	string newmsgs;
 	usr[0] = new Acc((n_name),(u_pswd));
 	cht[0] = new Chat((newmsgs));
-	vector <Acc> allusrs;
-	vector <Chat> allmsgs;
+	vector <Acc *> allusrs;
+	allusrs.push_back(usr[0]);
+	vector <Chat *> allmsgs;
+	allmsgs.push_back(cht[0]);
 	char switchLogon, switchLogoff;
 	
 	cout <<"Создать аккаунт введите: 'c'" << endl;
