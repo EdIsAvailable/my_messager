@@ -1,7 +1,7 @@
 #include "Acc.h"
 #include <iostream>
 using namespace std;
-// Конструктор класса Acc создаёт пользователя с ником, паролем и именем
+
 Acc::Acc(string& acc, string& pswd, string& name) : NewUser(acc), _pswd(pswd), _name(name)
 {}
 void Acc::Show (){ cout <<"Пароль "<< _pswd << endl; }
