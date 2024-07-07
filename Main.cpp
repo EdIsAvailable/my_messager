@@ -64,7 +64,7 @@ int main()
 				std::cout << "введите пароль " << endl;
 				std::cin >> u_pswd;
 			
-				if (u_pswd == u_pswd)// тут пока не пойму
+				if (u_pswd == u_pswd)// тут пока не пойму как пароль сверить
 				{
 					// start messeging
 
