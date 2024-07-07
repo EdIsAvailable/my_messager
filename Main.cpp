@@ -17,14 +17,14 @@ int main()
 	string newmsgs;
 
 	usr[0] = new Acc((n_name),(u_pswd),(u_name));
-	cht[0] = new Chat((newmsgs));
+	cht[0] = new Chat((newmsgs),(nwadr));
 	vector <Acc *> allusrs;
 	allusrs.push_back(usr[0]);
 	vector <Chat *> allmsgs;
 	allmsgs.push_back(cht[0]);
 	char switchLogon, switchLogoff;
 
-	// Здесь надо организовать цикл основной логики программы
+	
 	cout <<"Создать аккаунт введите: 'c'" << endl;
 	cout <<"Авторизоваться введите:  'l'" << endl;
 	std::cin >> switchLogon;
@@ -63,32 +63,23 @@ int main()
 			{
 				std::cout << "введите пароль " << endl;
 				std::cin >> u_pswd;
-				for (int j = 0; j < sizeof usr[0]; j++)
+			
 				if (u_pswd == u_pswd)
 				{
-					//staert messeging
+					// start messeging
 
 			   }
 			}
 			else
 			{
-				//выход в начало к авторизуйтесь
+				// переход в начало к авторизуйтесь
 			}
 
 		}
 		
-		
 		break;
 	}
-	/*
-	case 's':
-	 {
-		cht[0]->ShowC();
-		std::cin >> newmsgs;
 		
-		break;
-	}
-	*/
 	cout << "Отправить сообщение: 's'" << endl;
 	default:
 		break;

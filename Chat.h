@@ -5,7 +5,7 @@ class Chat
 {
 	string& _chat;
    public:
-	Chat(string& chat);
+	Chat(string& chat, string& adr);
 	void ShowC();
 	~Chat() {};
 };
