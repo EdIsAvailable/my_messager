@@ -8,7 +8,6 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "ru_RU.UTF-8");
-	// User ID
 	int user_id = 0;
 	Acc* usr[2]; // минммум 2 юзера
 	Chat* cht[2];
@@ -28,7 +27,6 @@ int main()
 	// Здесь надо организовать цикл основной логики программы
 	cout <<"Создать аккаунт введите: 'c'" << endl;
 	cout <<"Авторизоваться введите:  'l'" << endl;
-	cout <<"Отправить сообщение: 's'" << endl;
 	std::cin >> switchLogon;
 	switch(switchLogon)
 	{
@@ -36,25 +34,22 @@ int main()
 	{
 		std::cout << "придумайте никнейм " << endl;
 		std::cin >> n_name;
-		//usr[0]->set_Acc((n_name));
+		usr[0]->set_Acc((n_name));
 
 		std::cout << "создайте пароль " << endl;
 		std::cin >> u_pswd;
 		usr[0]->set_Pswd((u_pswd));
 		usr[0]->Show();
 
-		std::cout << "ваше имя: ";
+		std::cout << "укажите ваше имя: ";
 		std::cin >> u_name;
 		usr[0]->set_Acc((n_name));
 
-		if (user_id<20)
-		{
+	
 			usr[user_id] = new Acc(n_name, u_pswd, u_name);
 			// Следующий пользователь будет с ID+1
 			user_id++;
-		} else { 
-			// Надо увеличить массив пользователей!
-		}
+		
 
 		break;
 	}
@@ -62,20 +57,39 @@ int main()
 	{
 		std::cout << "введите никнейм " << endl;
 		std::cin >> n_name;
-		 //if (n_name == c)
-		
-		std::cout << "введите пароль " << endl;
-		std::cin >> u_pswd;
+		for (int i=0; i < sizeof usr[0]; i++)
+		{
+			if (n_name == n_name)
+			{
+				std::cout << "введите пароль " << endl;
+				std::cin >> u_pswd;
+				for (int j = 0; j < sizeof usr[0]; j++)
+				if (u_pswd == u_pswd)
+				{
+					//staert messeging
 
+			   }
+			}
+			else
+			{
+				//выход в начало к авторизуйтесь
+			}
+
+		}
+		
+		
 		break;
 	}
+	/*
 	case 's':
-	{
+	 {
 		cht[0]->ShowC();
 		std::cin >> newmsgs;
 		
 		break;
 	}
+	*/
+	cout << "Отправить сообщение: 's'" << endl;
 	default:
 		break;
 	}
