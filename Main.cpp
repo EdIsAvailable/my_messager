@@ -15,7 +15,7 @@ int main()
 	string u_pswd;
 	string u_name;
 	string newmsgs;
-
+	string nwadr;
 	usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	cht[0] = new Chat((newmsgs),(nwadr));
 	vector <Acc *> allusrs;
@@ -80,7 +80,6 @@ int main()
 		break;
 	}
 		
-	cout << "Отправить сообщение: 's'" << endl;
 	default:
 		break;
 	}
