@@ -19,6 +19,6 @@ const  string NewUser::get_Acc() const
 }
 void NewUser::set_Acc(const string acc)
 {
-	
+
 	cout << "Никнейм:  " << _acc << endl;
 }

@@ -2,7 +2,7 @@
 #include "NewUser.h"
 using namespace std;
 class Acc : public NewUser
-{	
+{
 	string& _pswd;
 	string& _name;
 public:

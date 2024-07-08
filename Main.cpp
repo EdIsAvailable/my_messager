@@ -19,12 +19,14 @@ int main()
 	bool r = false;
 	bool pp = false;
 	usr[0] = new Acc((n_name), (u_pswd), (u_name));
+	cht[0] = new Chat((newmsgs), (nwadr), (pp));
+	vector <Acc*> allusrs;
 	allusrs.push_back(usr[0]);
 	vector <Chat*> allmsgs;
 	allmsgs.push_back(cht[0]);
 	char switchLogon, switchLogoff;
 
-	
+
 	cout << "Создать аккаунт введите: 'c'" << endl;
 	cout << "Авторизоваться введите:  'l'" << endl;
 	std::cin >> switchLogon;
@@ -32,6 +34,15 @@ int main()
 	{
 	case 'c':
 	{
+		std::cout << "укажите ваше имя: " << endl;
+		std::cin >> u_name;
+		usr[0]->set_Acc((n_name));
+
+
+		usr[user_id] = new Acc(n_name, u_pswd, u_name);
+		// Следующий пользователь будет с ID+1
+		user_id++;
+
 		std::cout << "придумайте никнейм " << endl;
 		std::cin >> n_name;
 		usr[0]->set_Acc((n_name));
@@ -41,8 +52,9 @@ int main()
 		usr[0]->set_Pswd((u_pswd));
 		usr[0]->Show();
 
+		// здесь нужно авторизоваться
 
-	
+
 		break;
 	}
 	case 'l':
@@ -55,12 +67,29 @@ int main()
 			{
 				std::cout << "введите пароль " << endl;
 				std::cin >> u_pswd;
-			
+
 				if (u_pswd == u_pswd)// тут пока не пойму как пароль сверить
 				{
-					// start messeging
+					r = true;
+					do {
+						// выбор адресата
+						cout << "Выбрать адресата: " << endl;
+						std::cin >> n_name;
+						// if pp сообщение приватное
+					  // start messeging					
+						cout << "Отправить сообщение: " << endl;
+						std::cin >> newmsgs;
+						cht[0]->ShowC();
 
-			   }
+						// или logaut, r = false; (в начало к авторизуйтесь)
+
+					} while (r);
+				}
+				else
+				{
+					// переход в начало к авторизуйтесь
+
+				}
 			}
 			else
 			{
@@ -68,14 +97,14 @@ int main()
 			}
 
 		}
-		
+
 		break;
 	}
-		
+
 	default:
 		break;
 	}
-	
+
 	delete usr[0];
 	delete cht[0];
 	return 0;
