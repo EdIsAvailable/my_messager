@@ -4,6 +4,7 @@
 #include <time.h>
 #include "Acc.h"
 #include "Chat.h"
+#pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
 using namespace std;
 
 int main()
@@ -25,7 +26,7 @@ int main()
 	allusrs.push_back(usr[0]);
 	vector <Chat *> allmsgs;
 	//allmsgs.push_back(cht[0]);
-	char switchLogon = 'w', switchLogoff;
+	char switchLogon = 'w'; // , switchLogoff;
 	time_t t; // Определяем переменные для работы с датой и временем
 	struct tm *t_m;
 
