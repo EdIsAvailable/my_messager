@@ -21,12 +21,11 @@ int main()
 	string nwadr;
 	usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	//cht[0] = new Chat((newmsgs),(nwadr));
-	//cht[0] = new Chat(0, 0,(newmsgs));
 	vector <Acc *> allusrs;
 	allusrs.push_back(usr[0]);
 	vector <Chat *> allmsgs;
-	//allmsgs.push_back(cht[0]);
-	char switchLogon = 'w'; // , switchLogoff;
+	//allmsgs.push_back(cht[0]); // Первый вызов ниже по коду в момент "отправки" сообщения
+	char switchLogon = 'w'; // w - work //, switchLogoff;
 	time_t t; // Определяем переменные для работы с датой и временем
 	struct tm *t_m;
 
@@ -99,7 +98,7 @@ int main()
 		{
 			// Временная переменная для тестирования вектора сообщений
 			int msgId = user_id;
-			// Количество сообщений равно количеству зарегистрированных пользователей
+			// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
 			while (msgId--) {  // Обратный отсчёт
 				allmsgs[msgId]->ShowC();  // Выводим содержимое вектора сообщений
 			}
