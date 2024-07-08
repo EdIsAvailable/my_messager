@@ -10,8 +10,9 @@ class Chat
 	int _dest_uid; // UserID получателя сообщения
 	string _dateSent; // Время отправки сообщения
    public:
-	//Chat(string& chat, string& adr);
+	// Конструктор класса Chat создаёт класс сообщение в котором указываем uid отправителя, uid получатели, тело сообщения и дата и время отправленного сообщения
 	Chat(int src_uid, int dest_uid, string message, string dateSent);
+	// Показать сообщение, которое хранится в классе
 	void ShowC();
 	// Функция для отправки сообщения
 	//void sendMsg(int src_uid, int dest_uid, string _message);

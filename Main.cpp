@@ -51,7 +51,6 @@ int main()
 			std::cout << "укажите ваше имя: ";
 			std::cin >> u_name;
 			//usr[0]->set_Acc((n_name));
-
 		
 			//usr[user_id] = new Acc(n_name, u_pswd, u_name);
 			allusrs.push_back(new Acc(n_name, u_pswd, u_name));
@@ -59,11 +58,10 @@ int main()
 			user_id++;
 			t = time(NULL);
 			t_m = localtime(&t);
-			//string msgTime = " " + (t_m->tm_mday) + "." + (t_m->tm_mon+1) + "." + (t_m->tm_year+1900) + " ";
-			//string msgTime =  std::format (" %d.%d.%d ", t_m->tm_mday, t_m->tm_mon+1, t_m->tm_year+1900);
+			// Формируем дату и время отправки сообщения
 			string msgTime = 	" " + std::to_string(t_m->tm_mday) + "-" + std::to_string(t_m->tm_mon+1) + "-" + std::to_string(t_m->tm_year+1900) + 
 								" " + std::to_string(t_m->tm_hour) + ":" + std::to_string(t_m->tm_min) + ":" + std::to_string(t_m->tm_sec);
-			allmsgs.push_back(new Chat(user_id, 5-user_id, (u_name), msgTime));  // Добавляем очередное сообщение в вектор
+			allmsgs.push_back(new Chat(user_id, 5-user_id, u_name, msgTime));  // Добавляем очередное сообщение в вектор
 			lastMsg++; // Увеличиваем счётчик сообщений
 
 			break;
