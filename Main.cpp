@@ -13,7 +13,7 @@ int main()
 	int user_id = 0;
 	int lastMsg = 0;
 	Acc* usr[2]; // минммум 2 юзера
-	Chat* cht[2];
+	//Chat* cht[2];
 	string n_name;
 	string u_pswd;
 	string u_name;
@@ -97,30 +97,21 @@ int main()
 		}
 		case 'q':
 		{
-			//allmsgs.push_back(cht[0]);
-			//std::vector<int> data = {1, 2, 3, 4, 5};
-			//for (int elem : data) {
-			//	std::cout << elem << " ";
-			//}
-			//std::cout << "\n";
-
-			//int x;
-			//std::vector<int> data;
+			// Временная переменная для тестирования вектора сообщений
 			int msgId = user_id;
-			while (msgId--) {  // читаем числа, пока не закончится ввод
-				allmsgs[msgId]->ShowC();  // добавляем очередное число в вектор
+			// Количество сообщений равно количеству зарегистрированных пользователей
+			while (msgId--) {  // Обратный отсчёт
+				allmsgs[msgId]->ShowC();  // Выводим содержимое вектора сообщений
 			}
 
 			cout << "Всего сообщений в базе: " << allmsgs.size() << endl;
 			while (user_id--) {
 				// Пока вектор не пуст и последний элемент равен нулю
-
 				cout << "ник: " << allusrs[user_id]->get_Acc() << " ";  // проверить ник
 				cout << "пароль: ";
 				//allusrs[user_id]->Show();
 				cout << " ";  // проверить пароль
 				cout << endl;
-
 			}
 
 			cout << "ник: " << allusrs[0]->get_Acc() << endl;  // проверить ник
@@ -142,6 +133,6 @@ int main()
 	
 	
 	delete usr[0];
-	delete cht[0];
+	//delete cht[0];
 	return 0;
 };
