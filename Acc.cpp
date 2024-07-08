@@ -4,7 +4,7 @@ using namespace std;
 
 Acc::Acc(string& acc, string& pswd, string& name) : NewUser(acc), _pswd(pswd), _name(name)
 {}
-void Acc::Show (){ cout <<"Пароль "<< _pswd << endl; }
+void Acc::Show() { cout << "Пароль " << _pswd << endl; }
 const  string Acc::get_Pswd() const
 {
 	return _pswd;
@@ -20,5 +20,5 @@ const  string NewUser::get_Acc() const
 void NewUser::set_Acc(const string acc)
 {
 	
-	cout << "Никнейм:  " << _acc<< endl;
+	cout << "Никнейм:  " << _acc << endl;
 }
