@@ -1,6 +1,7 @@
 #include<iostream>
 #include <vector>
 #include <string>
+#include <time.h>
 #include "Acc.h"
 #include "Chat.h"
 using namespace std;
@@ -19,16 +20,17 @@ int main()
 	string nwadr;
 	usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	//cht[0] = new Chat((newmsgs),(nwadr));
-	cht[0] = new Chat(0, 0,(newmsgs));
+	//cht[0] = new Chat(0, 0,(newmsgs));
 	vector <Acc *> allusrs;
 	allusrs.push_back(usr[0]);
 	vector <Chat *> allmsgs;
-	allmsgs.push_back(cht[0]);
+	//allmsgs.push_back(cht[0]);
 	char switchLogon = 'w', switchLogoff;
+	time_t t; // Определяем переменные для работы с датой и временем
+	struct tm *t_m;
 
 	while (switchLogon != 'q')
 	{
-		/* code */
 		cout <<"Создать аккаунт введите: 'c'" << endl;
 		cout <<"Авторизоваться введите:  'l'" << endl;
 		cout <<"Для выхода введите:  'q'" << endl;
@@ -55,10 +57,15 @@ int main()
 			allusrs.push_back(new Acc(n_name, u_pswd, u_name));
 			// Следующий пользователь будет с ID+1
 			user_id++;
-			//int msgId=5;
-			//while (msgId--) {  // читаем числа, пока не закончится ввод
-				allmsgs.push_back(new Chat(user_id, 5-user_id, (u_name)));  // добавляем очередное число в вектор
-			//}
+			t = time(NULL);
+			t_m = localtime(&t);
+			//string msgTime = " " + (t_m->tm_mday) + "." + (t_m->tm_mon+1) + "." + (t_m->tm_year+1900) + " ";
+			//string msgTime =  std::format (" %d.%d.%d ", t_m->tm_mday, t_m->tm_mon+1, t_m->tm_year+1900);
+			string msgTime = 	" " + std::to_string(t_m->tm_mday) + "-" + std::to_string(t_m->tm_mon+1) + "-" + std::to_string(t_m->tm_year+1900) + 
+								" " + std::to_string(t_m->tm_hour) + ":" + std::to_string(t_m->tm_min) + ":" + std::to_string(t_m->tm_sec);
+			allmsgs.push_back(new Chat(user_id, 5-user_id, (u_name), msgTime));  // Добавляем очередное сообщение в вектор
+			lastMsg++; // Увеличиваем счётчик сообщений
+
 			break;
 		}
 		case 'l':
