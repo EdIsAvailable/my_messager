@@ -2,14 +2,14 @@
 #include<iostream>
 using namespace std;
 class NewUser
-{	
-	const string& _acc;
+{
+protected: string _login;
 public:
-	 NewUser() = default;
-	 NewUser(const string& acc) : _acc(acc) {}
+	NewUser() = default;
+	NewUser(const string& login) : _login(login) {}
 	virtual ~NewUser() = default;
 	virtual void Show() = 0;
-	const  string get_Acc() const;
-	void set_Acc(const string acc);
-	
+	const  string get_Login() const;
+	void set_Login(const string login);
+
 };

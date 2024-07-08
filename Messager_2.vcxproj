@@ -130,11 +130,20 @@
     <ClInclude Include="Chat.h" />
     <ClInclude Include="NewUser.h" />
     <ClInclude Include="Acc.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Server.h" />
+    <ClInclude Include="UserRepository.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chat.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Acc.cpp" />
+    <ClCompile Include="NewUser.cpp" />
+    <ClCompile Include="Server.cpp" />
+    <ClCompile Include="UserRepository.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Messager_2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

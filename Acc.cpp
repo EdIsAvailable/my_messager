@@ -2,23 +2,23 @@
 #include <iostream>
 using namespace std;
 
-Acc::Acc(string& acc, string& pswd, string& name) : NewUser(acc), _pswd(pswd), _name(name)
+Acc::Acc(string& login, string& pswd, string& name) : NewUser(login), _pswd(pswd), _name(name)
 {}
 void Acc::Show() { cout << "Пароль " << _pswd << endl; }
 const  string Acc::get_Pswd() const
 {
 	return _pswd;
 }
-void Acc::set_Pswd(const string pswd)
+void Acc::set_Pswd(const string pwd)
 {
-	_pswd = pswd;
-}
-const  string NewUser::get_Acc() const
-{
-	return _acc;
-}
-void NewUser::set_Acc(const string acc)
-{
+	//check if null then throw
+	if (pwd == "")
+		throw new exception("Emptry password");
 
-	cout << "Никнейм:  " << _acc << endl;
+	_pswd = pwd;
 }
+bool Acc::CheckPassword(string& pwd)
+{
+	return _pswd == pwd;
+}
+
