@@ -12,13 +12,13 @@ int main()
 	setlocale(LC_ALL, "ru_RU.UTF-8");
 	int user_id = 0;
 	int lastMsg = 0;
-	Acc* usr[2]; // минммум 2 юзера
+	//Acc* usr[2]; // минммум 2 юзера
 	//Chat* cht[2];
 	string n_name;
 	string u_pswd;
 	string u_name;
 	string newmsgs;
-	string nwadr;
+	//string nwadr;
 	//usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	//cht[0] = new Chat((newmsgs),(nwadr));
 	vector <Acc *> allusrs;
@@ -33,22 +33,22 @@ int main()
 	{
 		cout <<"Создать аккаунт введите: 'c'" << endl;
 		cout <<"Авторизоваться введите:  'l'" << endl;
-		cout <<"Для выхода введите:  'q'" << endl;
+		cout <<"Для выхода введите:  'q'" << endl << endl;
 		std::cin >> switchLogon;
 		switch(switchLogon)
 		{
 		case 'c':
 		{
-			std::cout << "придумайте никнейм " << endl;
+			std::cout << "Придумайте никнейм: ";
 			std::cin >> n_name;
 			//usr[0]->set_Acc((n_name));
 
-			std::cout << "создайте пароль " << endl;
+			std::cout << "Создайте пароль: ";
 			std::cin >> u_pswd;
 			//usr[0]->set_Pswd((u_pswd));
 			//usr[0]->Show();
 
-			std::cout << "укажите ваше имя: ";
+			std::cout << "Укажите ваше имя: ";
 			std::cin >> u_name;
 			//usr[0]->set_Acc((n_name));
 		
@@ -68,19 +68,31 @@ int main()
 		}
 		case 'l':
 		{
-			std::cout << "введите никнейм " << endl;
+			std::cout << "Ведите никнейм: ";
 			std::cin >> n_name;
-			for (int i=0; i < sizeof usr[0]; i++)
+			for (size_t i = 0; i < allusrs.size(); i++)
 			{
-				if (n_name == n_name)
+				if (n_name == allusrs[i]->get_Acc())
 				{
-					std::cout << "введите пароль " << endl;
+					int current_uid = i;
+					std::cout << "Введите пароль: ";
 					std::cin >> u_pswd;
 				
-					if (u_pswd == u_pswd)// тут пока не пойму как пароль сверить
+					if (u_pswd == allusrs[i]->get_Pswd())// тут пока не пойму как пароль сверить
 					{
+						cout << "Введите сообщение: ";
+						std::cin >> newmsgs;
 						// start messeging
+						t = time(NULL);
+						t_m = localtime(&t);
+						// Формируем дату и время отправки сообщения
+						string msgTime =" " + std::to_string(t_m->tm_mday) + "-" + std::to_string(t_m->tm_mon+1) + "-" + std::to_string(t_m->tm_year+1900) + 
+										" " + std::to_string(t_m->tm_hour) + ":" + std::to_string(t_m->tm_min) + ":" + std::to_string(t_m->tm_sec);
+						allmsgs.push_back(new Chat(current_uid, 5-user_id, newmsgs, msgTime));  // Добавляем очередное сообщение в вектор
+						lastMsg++; // Увеличиваем счётчик сообщений
 
+					} else {
+						cout << "Пароль не корректен!" << endl;
 					}
 				}
 				else
@@ -95,7 +107,7 @@ int main()
 		case 'q':
 		{
 			// Временная переменная для тестирования вектора сообщений
-			int msgId = user_id;
+			int msgId = allmsgs.size(); //user_id;
 			// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
 			while (msgId--) {  // Обратный отсчёт
 				allmsgs[msgId]->ShowC();  // Выводим содержимое вектора сообщений
@@ -113,9 +125,7 @@ int main()
 			// cout << "ник: " << allusrs[0]->get_Acc() << endl;  // проверить ник
 			// cout << "ник: " << allusrs[1]->get_Acc() << endl;  // проверить ник
 			// cout << "ник: " << allusrs[2]->get_Acc() << endl;  // проверить ник
-
 			cout << "Всего пользователей зарегистрировано: " << allusrs.size() << endl;
-
 			std::cout << "До встречи! Завершение работы..." << endl;
 			break;
 		}
@@ -126,9 +136,7 @@ int main()
 
 	}
 	
-	
-	
-	delete usr[0];
+	//delete usr[0];
 	//delete cht[0];
 	return 0;
 };
