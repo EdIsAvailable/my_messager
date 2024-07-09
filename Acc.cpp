@@ -12,9 +12,9 @@ const  string Acc::get_Pswd() const
 void Acc::set_Pswd(const string pwd)
 {
 	//check if null then throw
-	if (pwd == "")
-		throw ("Emptry password");
-		//throw new exception("Emptry password");
+	if (pwd == " ")
+		throw ("не введён пароль");
+		
 
 	_pswd = pwd;
 }

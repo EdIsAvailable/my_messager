@@ -1,13 +1,17 @@
 #pragma once
 #include<iostream>
+#include <vector>
+#include <string>
+#include "Message.h"
 using namespace std;
 class Chat
 {
-	string& _chat;
-	string& _adr; // булевый флаг наверно не получится тк в вектор должны однотипные данные передаваться. Метка будет адрес "forall"
-	bool _p;
+	vector<Message*> _messages;
 public:
-	Chat(string& chat, string& adr, bool& p);
-	void ShowC();
-	~Chat() {};
+	Chat();
+	vector<Message*> GetMessagesForAll();
+	vector<Message*> GetMessagesForUser(string login);
+	void AddMessage(Message* msg);
+
+	~Chat();
 };

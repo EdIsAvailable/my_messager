@@ -6,23 +6,25 @@ UserRepository::UserRepository()
 	//_users = { };
 }
 
-void UserRepository::NewUser()
+Acc* UserRepository::NewUser()
 {
 	string login, pwd, name;
 
 	//std::cout << "укажите ваше имя: " << endl;
-	std::cout << "Enter your name: " << endl;
+	std::cout << "Введите имя: " << endl;
 	std::cin >> name;
 	//std::cout << "придумайте никнейм " << endl;
-	std::cout << "Enter your login: " << endl;
+	std::cout << "Придумайте логин: " << endl;
 	std::cin >> login;
 	//std::cout << "создайте пароль " << endl;
-	std::cout << "Enter password: " << endl;
+	std::cout << "Создайте пароль: " << endl;
 	std::cin >> pwd;
 	Acc* newUser = new Acc(login, pwd, name);
 	newUser->Show();
 
 	_users.push_back(newUser);
+
+	return newUser;
 }
 
 Acc* UserRepository::FindUser(string login)
@@ -43,17 +45,22 @@ Acc* UserRepository::AuthorizeUser(string login, string pwd)
 
 	if (user == NULL)
 	{
-		std::cout << "No user was found!!!" << endl;
+		std::cout << "Пользователь не найден!!!" << endl;
 		return NULL;
 	}
 
 	if (!(user->CheckPassword(pwd)))
 	{
-		std::cout << "Wrong password" << endl;
+		std::cout << "Неправильный пароль" << endl;
 		return NULL;
 	}
 
 	return user;
+}
+
+UserRepository::~UserRepository()
+{
+	_users.clear();
 }
 
 

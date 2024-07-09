@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Chat.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="NewUser.h" />
     <ClInclude Include="Acc.h" />
     <ClInclude Include="resource.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Chat.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Acc.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="NewUser.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="UserRepository.cpp" />

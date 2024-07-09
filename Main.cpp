@@ -22,7 +22,7 @@ int main()
 	bool r = false;
 	bool pp = false;
 	//userRepository[0] = new Acc((n_name), (u_pswd), (u_name));
-	chatRepository[0] = new Chat((newmsgs), (nwadr), (pp));
+	//chatRepository[0] = new Chat((newmsgs), (nwadr), (pp));
 	char switchLogon, switchLogoff;
 
 	_server = new Server();

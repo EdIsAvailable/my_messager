@@ -12,31 +12,28 @@ void Server::MainProcess()
 	bool process = true;
 	char menuOption;
 	do {
-		/*cout << "Создать аккаунт введите: 'c'" << endl;
-		cout << "Авторизоваться введите:  'l'" << endl;*/
-		cout << "(C) Create account:" << endl;
-		cout << "(A) Authorization:" << endl;
-		cout << "(E) Exit:" << endl;
+		cout << "Создать аккаунт введите: 'c'" << endl;
+		cout << "Авторизоваться введите:  'a'" << endl;
+		cout << "Выход: 'e'" << endl;
 		std::cin >> menuOption;
 		switch (menuOption)
 		{
-		case 'C':
 		case 'c':
 		{
-			_userRepo->NewUser();
+			Acc* newUser =  _userRepo->NewUser();
+
+			//добавить в вектор чатов
 			break;
 		}
-		case 'A':
 		case 'a':
 		{
 			Acc* user = ProcessAuthorization();
 			if (user == NULL)
-				continue; //vozmojno nujno dobaviti siuda eshio odin break, glavnoe shtob on ne vyhodil iz tsykla
+				continue; //сюда возможно нужно добавить кщё один break, чтобы не было выхода из цикла
 
 			ProcessChat(user);
 			break;
 		}
-		case 'E':
 		case 'e': {
 			process = false;
 			break;
@@ -59,7 +56,7 @@ Acc* Server::ProcessAuthorization()
 
 	if (user == NULL)
 	{
-		std::cout << "Wrong user or password" << endl;
+		std::cout << "неверно введён пароль" << endl;
 		return NULL;
 	}
 
