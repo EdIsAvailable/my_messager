@@ -19,10 +19,10 @@ int main()
 	string u_name;
 	string newmsgs;
 	string nwadr;
-	usr[0] = new Acc((n_name),(u_pswd),(u_name));
+	//usr[0] = new Acc((n_name),(u_pswd),(u_name));
 	//cht[0] = new Chat((newmsgs),(nwadr));
 	vector <Acc *> allusrs;
-	allusrs.push_back(usr[0]);
+	//allusrs.push_back(usr[0]);
 	vector <Chat *> allmsgs;
 	//allmsgs.push_back(cht[0]); // Первый вызов ниже по коду в момент "отправки" сообщения
 	char switchLogon = 'w'; // w - work //, switchLogoff;
@@ -105,15 +105,14 @@ int main()
 			while (user_id--) {
 				// Пока вектор не пуст и последний элемент равен нулю
 				cout << "ник: " << allusrs[user_id]->get_Acc() << " ";  // проверить ник
-				cout << "пароль: ";
-				//allusrs[user_id]->Show();
-				cout << " ";  // проверить пароль
+				cout << "пароль: " << allusrs[user_id]->get_Pswd() << " "; // проверить пароль
+				//allusrs[user_id]->Show();				
 				cout << endl;
 			}
 
-			cout << "ник: " << allusrs[0]->get_Acc() << endl;  // проверить ник
-			cout << "ник: " << allusrs[1]->get_Acc() << endl;  // проверить ник
-			cout << "ник: " << allusrs[2]->get_Acc() << endl;  // проверить ник
+			// cout << "ник: " << allusrs[0]->get_Acc() << endl;  // проверить ник
+			// cout << "ник: " << allusrs[1]->get_Acc() << endl;  // проверить ник
+			// cout << "ник: " << allusrs[2]->get_Acc() << endl;  // проверить ник
 
 			cout << "Всего пользователей зарегистрировано: " << allusrs.size() << endl;
 
