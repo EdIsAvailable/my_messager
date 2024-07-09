@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED on)
 set(CXX_EXTENSIONS NO)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
 
-add_executable(${PROJECT_NAME} Main.cpp Acc.cpp Chat.cpp)		# Создает исполняемый файл с именем main
+add_executable(${PROJECT_NAME} Main.cpp NewUser.cpp Acc.cpp Chat.cpp Server.cpp UserRepository.cpp)		# Создает исполняемый файл с именем main
 									# из исходника main.cpp
 #add_executable(main src/Main.cpp src/HttpServer.cpp)
 #target_link_libraries(main ${PTHREAD_LIBRARY} ${PCRE_LIBRARY})

@@ -12,8 +12,8 @@ void Server::MainProcess()
 	bool process = true;
 	char menuOption;
 	do {
-		/*cout << "Ñîçäàòü àêêàóíò ââåäèòå: 'c'" << endl;
-		cout << "Àâòîðèçîâàòüñÿ ââåäèòå:  'l'" << endl;*/
+		/*cout << "Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ: 'c'" << endl;
+		cout << "ÐÐ²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ð°Ñ‚ÑŒÑÑ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ:  'l'" << endl;*/
 		cout << "(C) Create account:" << endl;
 		cout << "(A) Authorization:" << endl;
 		cout << "(E) Exit:" << endl;
@@ -50,9 +50,9 @@ void Server::MainProcess()
 Acc* Server::ProcessAuthorization()
 {
 	string login, pwd;
-	std::cout << "ââåäèòå íèêíåéì " << endl;
+	std::cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼ " << endl;
 	std::cin >> login;
-	std::cout << "ââåäèòå ïàðîëü " << endl;
+	std::cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ " << endl;
 	std::cin >> pwd;
 
 	Acc* user = _userRepo->AuthorizeUser(login, pwd);

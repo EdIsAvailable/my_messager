@@ -13,7 +13,8 @@ void Acc::set_Pswd(const string pwd)
 {
 	//check if null then throw
 	if (pwd == "")
-		throw new exception("Emptry password");
+		throw ("Emptry password");
+		//throw new exception("Emptry password");
 
 	_pswd = pwd;
 }

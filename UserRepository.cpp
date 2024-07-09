@@ -10,13 +10,13 @@ void UserRepository::NewUser()
 {
 	string login, pwd, name;
 
-	//std::cout << "óêàæèòå âàøå èìÿ: " << endl;
+	//std::cout << "ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð²Ð°ÑˆÐµ Ð¸Ð¼Ñ: " << endl;
 	std::cout << "Enter your name: " << endl;
 	std::cin >> name;
-	//std::cout << "ïðèäóìàéòå íèêíåéì " << endl;
+	//std::cout << "Ð¿Ñ€Ð¸Ð´ÑƒÐ¼Ð°Ð¹Ñ‚Ðµ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼ " << endl;
 	std::cout << "Enter your login: " << endl;
 	std::cin >> login;
-	//std::cout << "ñîçäàéòå ïàðîëü " << endl;
+	//std::cout << "ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ " << endl;
 	std::cout << "Enter password: " << endl;
 	std::cin >> pwd;
 	Acc* newUser = new Acc(login, pwd, name);

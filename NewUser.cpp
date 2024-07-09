@@ -10,5 +10,5 @@ const  string NewUser::get_Login() const
 void NewUser::set_Login(const string acc)
 {
 
-	cout << "Íèêíåéì:  " << _login << endl;
+	cout << "ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼:  " << _login << endl;
 }
