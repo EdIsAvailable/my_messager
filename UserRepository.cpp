@@ -10,13 +10,10 @@ Acc* UserRepository::NewUser()
 {
 	string login, pwd, name;
 
-	//std::cout << "укажите ваше имя: " << endl;
 	std::cout << "Введите имя: " << endl;
 	std::cin >> name;
-	//std::cout << "придумайте никнейм " << endl;
 	std::cout << "Придумайте логин: " << endl;
 	std::cin >> login;
-	//std::cout << "создайте пароль " << endl;
 	std::cout << "Создайте пароль: " << endl;
 	std::cin >> pwd;
 	Acc* newUser = new Acc(login, pwd, name);
