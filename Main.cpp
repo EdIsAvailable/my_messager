@@ -73,7 +73,8 @@ int main()
 					if (u_pswd == allusrs[i]->get_Pswd())
 					{
 						cout << "Введите сообщение: ";
-						std::cin >> newmsgs;
+						cin.get();
+						getline(cin, newmsgs); //std::cin >> newmsgs;
 						// Подготавливаем дату и время
 						t = time(NULL);
 						t_m = localtime(&t);
