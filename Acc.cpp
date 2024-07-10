@@ -13,6 +13,11 @@ void Acc::set_Pswd(const string pswd)
 {
 	_pswd = pswd;
 }
+const string Acc::getName(void)
+{
+	return _name; // Получить имя пользователя
+}
+
 void Acc::setLastReadMsg(const int lastReadMsg)
 {
 	_lastReadMsg = lastReadMsg;

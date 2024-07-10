@@ -20,6 +20,10 @@ int main()
 
 	vector <Acc *> allusrs; // Вектор учётных записей пользователей
 	vector <Chat *> allmsgs; // Вектор отправленных сообщений пользователей
+	// Регистрируем виртуального пользователя с UID = 0 для общего чата
+	allusrs.push_back(new Acc("n_name", "u_pswd", "Общий чат"));
+	// Следующий пользователь будет с ID+1
+	user_id++;
 	char switchLogon = 'w'; // Выбор режима работы w - work / c - create user / l - login user / q - quit
 
 	while (switchLogon != 'q')
@@ -62,14 +66,24 @@ int main()
 					int current_uid = i;
 					std::cout << "Введите пароль: ";
 					std::cin >> u_pswd;
-					// Провреряем введённый пароль на соответствие учётной записи из вектора пользователей
+					// Проверяем введённый пароль на соответствие учётной записи из вектора пользователей
 					if (u_pswd == allusrs[i]->get_Pswd())
 					{
+						int dest_uid = (int)allusrs.size();
+						cout << "Зарегистрированные пользователи, всего: " << dest_uid << "человек." << endl;
+						while (dest_uid--) {
+							// Выводим список зарегистрированных пользователей, пока вектор не пуст и последний элемент равен нулю
+							cout << dest_uid << ".\tИмя: \t\t" << allusrs[dest_uid]->getName();  // вывести имя
+							cout << endl;
+						}
+						std::cout << "Выберите адресата сообщения от 0 (общий чат) до " << (allusrs.size()-1) << ": ";
+						std::cin >> dest_uid; // Указываем адресата сообщения
+						
 						cout << "Введите сообщение: ";
 						cin.get(); // Очистить буфер ввода перед чтением строки
 						getline(cin, newmsgs); // Читаем строку тела сообщения для отправки
 						// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
-						allmsgs.push_back(new Chat(current_uid, 5-user_id, newmsgs));
+						allmsgs.push_back(new Chat(current_uid, dest_uid, newmsgs));
 						lastMsg++; // Увеличиваем счётчик сообщений
 
 					} else {
@@ -106,10 +120,7 @@ int main()
 		default:
 			break;
 		}
-
 	}
-	
-	//delete usr[0];
-	//delete cht[0];
+
 	return 0;
 };
