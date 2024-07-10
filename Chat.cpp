@@ -1,6 +1,8 @@
 #include "Chat.h"
+#include <string>
 #include <time.h>
 #include <iostream>
+#pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS для localtime
 using namespace std;
 
 // Конструктор класса Chat создаёт класс сообщение в котором указываем uid отправителя, uid получатели, тело сообщения и дата и время отправленного сообщения

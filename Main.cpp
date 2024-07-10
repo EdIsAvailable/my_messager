@@ -2,14 +2,20 @@
 #include <vector>
 #include <string>
 #include <time.h>
+#include <windows.h>
 #include "Acc.h"
 #include "Chat.h"
-#pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS для localtime
 using namespace std;
 
 int main()
 {
+#ifdef __GCC__
 	setlocale(LC_ALL, "ru_RU.UTF-8");
+#endif // GCC
+#ifndef __GCC__
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+#endif // !GCC
 	int user_id = 0; // Счётчик учётных записей пользователей
 	int lastMsg = 0; // Счётчик отправленных сообщений
 	
@@ -21,7 +27,7 @@ int main()
 	vector <Acc *> allusrs; // Вектор учётных записей пользователей
 	vector <Chat *> allmsgs; // Вектор отправленных сообщений пользователей
 	// Регистрируем виртуального пользователя с UID = 0 для общего чата
-	allusrs.push_back(new Acc("n_name", "u_pswd", "Общий чат"));
+	allusrs.push_back(new Acc("public", "chat", "Общий чат"));
 	// Следующий пользователь будет с ID+1
 	user_id++;
 	char switchLogon = 'w'; // Выбор режима работы w - work / c - create user / l - login user / q - quit
@@ -43,14 +49,16 @@ int main()
 			std::cin >> u_pswd;
 
 			std::cout << "Укажите ваше имя: ";
-			std::cin >> u_name;
+			//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cin.get(); // Очистить буфер ввода перед чтением строки
+			getline(cin, u_name); // Читаем строку ФИО для регистрации пользователя
 			// Регистрируем пользователя - добавляем очередного пользователя в вектор
 			allusrs.push_back(new Acc(n_name, u_pswd, u_name));
 			// Следующий пользователь будет с ID+1
 			user_id++;
-			// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
-			allmsgs.push_back(new Chat(user_id, 5-user_id, u_name));
-			lastMsg++; // Увеличиваем счётчик сообщений
+			// "Отправляем тестовое сообщение регистрации пользователя" - Добавляем очередное сообщение в вектор
+			//allmsgs.push_back(new Chat(user_id, 5-user_id, u_name));
+			//lastMsg++; // Увеличиваем счётчик сообщений
 
 			break;
 		}
@@ -82,7 +90,7 @@ int main()
 						}
 						// Всего пользователей
 						int dest_uid = (int)allusrs.size();
-						cout << "Зарегистрированные пользователи, всего: " << dest_uid << "человек." << endl;
+						cout << "Зарегистрированные пользователи, всего: " << dest_uid << " шт." << endl;
 						while (dest_uid--) {
 							// Выводим список зарегистрированных пользователей, пока вектор не пуст и последний элемент равен нулю
 							cout << dest_uid << ".\tИмя: \t\t" << allusrs[dest_uid]->getName();  // вывести имя
@@ -118,8 +126,9 @@ int main()
 			cout << "Всего сообщений в базе: " << allmsgs.size() << endl;
 			while (user_id--) {
 				// Пока вектор не пуст и последний элемент равен нулю
-				cout << "Ник: " << allusrs[user_id]->get_Acc() << " ";  // проверить ник
-				cout << "Пароль: " << allusrs[user_id]->get_Pswd() << " "; // проверить пароль
+				cout << "Ник: \t" << allusrs[user_id]->get_Acc() << " ";  // выводим ник
+				cout << "Пароль: \t" << allusrs[user_id]->get_Pswd() << " "; // выводим пароль
+				cout << "ФИО: \t" << allusrs[user_id]->getName(); // выводим ФИО
 				cout << endl;
 			}
 
