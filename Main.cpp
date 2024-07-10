@@ -69,6 +69,18 @@ int main()
 					// Проверяем введённый пароль на соответствие учётной записи из вектора пользователей
 					if (u_pswd == allusrs[i]->get_Pswd())
 					{
+						// Получение сообщений
+						//cout << "У вас " << allusrs[current_uid]->getName() << " соообщений." << endl;
+						// Временная переменная для вектора сообщений
+						int msgId = allmsgs.size(); // Всего сообщений
+						while (msgId--) {  // Обратный отсчёт
+							// Проверить получателя сообщения
+							if (allmsgs[msgId]->getDestUid() == current_uid || allmsgs[msgId]->getDestUid() == 0)
+							{
+								allmsgs[msgId]->ShowC();
+							}
+						}
+						// Всего пользователей
 						int dest_uid = (int)allusrs.size();
 						cout << "Зарегистрированные пользователи, всего: " << dest_uid << "человек." << endl;
 						while (dest_uid--) {
@@ -78,7 +90,7 @@ int main()
 						}
 						std::cout << "Выберите адресата сообщения от 0 (общий чат) до " << (allusrs.size()-1) << ": ";
 						std::cin >> dest_uid; // Указываем адресата сообщения
-						
+
 						cout << "Введите сообщение: ";
 						cin.get(); // Очистить буфер ввода перед чтением строки
 						getline(cin, newmsgs); // Читаем строку тела сообщения для отправки
@@ -108,7 +120,6 @@ int main()
 				// Пока вектор не пуст и последний элемент равен нулю
 				cout << "Ник: " << allusrs[user_id]->get_Acc() << " ";  // проверить ник
 				cout << "Пароль: " << allusrs[user_id]->get_Pswd() << " "; // проверить пароль
-				//allusrs[user_id]->Show();				
 				cout << endl;
 			}
 

@@ -12,6 +12,8 @@ class Chat
 	Chat(int src_uid, int dest_uid, string message);
 	// Показать сообщение, которое хранится в классе
 	void ShowC();
+	// Проверить получателя сообщения
+	const int getDestUid(void);
 	// Функция для отправки сообщения
 	//void sendMsg(int src_uid, int dest_uid, string _message);
 	~Chat() {};
