@@ -12,16 +12,15 @@ int main()
 	setlocale(LC_ALL, "ru_RU.UTF-8");
 	int user_id = 0; // Счётчик учётных записей пользователей
 	int lastMsg = 0; // Счётчик отправленных сообщений
+	
+	string n_name; // Временная переменная для ввода nick name
+	string u_pswd; // Временная переменная для ввода пароля
+	string u_name; // Временная переменная для ФИО пользователя
+	string newmsgs; // Временная переменная для ввода тела сообщения
 
-	string n_name; // Пере
-	string u_pswd;
-	string u_name;
-	string newmsgs;
 	vector <Acc *> allusrs; // Вектор учётных записей пользователей
 	vector <Chat *> allmsgs; // Вектор отправленных сообщений пользователей
 	char switchLogon = 'w'; // Выбор режима работы w - work / c - create user / l - login user / q - quit
-	time_t t; // Определяем переменные для работы с датой и временем
-	struct tm *t_m;
 
 	while (switchLogon != 'q')
 	{
@@ -45,14 +44,8 @@ int main()
 			allusrs.push_back(new Acc(n_name, u_pswd, u_name));
 			// Следующий пользователь будет с ID+1
 			user_id++;
-			// Подготавливаем дату и время
-			t = time(NULL);
-			t_m = localtime(&t);
-			// Формируем дату и время отправки сообщения
-			string msgTime = 	" " + std::to_string(t_m->tm_mday) + "-" + std::to_string(t_m->tm_mon+1) + "-" + std::to_string(t_m->tm_year+1900) + 
-								" " + std::to_string(t_m->tm_hour) + ":" + std::to_string(t_m->tm_min) + ":" + std::to_string(t_m->tm_sec);
 			// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
-			allmsgs.push_back(new Chat(user_id, 5-user_id, u_name, msgTime));
+			allmsgs.push_back(new Chat(user_id, 5-user_id, u_name));
 			lastMsg++; // Увеличиваем счётчик сообщений
 
 			break;
@@ -73,16 +66,10 @@ int main()
 					if (u_pswd == allusrs[i]->get_Pswd())
 					{
 						cout << "Введите сообщение: ";
-						cin.get();
-						getline(cin, newmsgs); //std::cin >> newmsgs;
-						// Подготавливаем дату и время
-						t = time(NULL);
-						t_m = localtime(&t);
-						// Формируем дату и время отправки сообщения
-						string msgTime =" " + std::to_string(t_m->tm_mday) + "-" + std::to_string(t_m->tm_mon+1) + "-" + std::to_string(t_m->tm_year+1900) + 
-										" " + std::to_string(t_m->tm_hour) + ":" + std::to_string(t_m->tm_min) + ":" + std::to_string(t_m->tm_sec);
+						cin.get(); // Очистить буфер ввода перед чтением строки
+						getline(cin, newmsgs); // Читаем строку тела сообщения для отправки
 						// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
-						allmsgs.push_back(new Chat(current_uid, 5-user_id, newmsgs, msgTime));
+						allmsgs.push_back(new Chat(current_uid, 5-user_id, newmsgs));
 						lastMsg++; // Увеличиваем счётчик сообщений
 
 					} else {
@@ -105,15 +92,12 @@ int main()
 			cout << "Всего сообщений в базе: " << allmsgs.size() << endl;
 			while (user_id--) {
 				// Пока вектор не пуст и последний элемент равен нулю
-				cout << "ник: " << allusrs[user_id]->get_Acc() << " ";  // проверить ник
-				cout << "пароль: " << allusrs[user_id]->get_Pswd() << " "; // проверить пароль
+				cout << "Ник: " << allusrs[user_id]->get_Acc() << " ";  // проверить ник
+				cout << "Пароль: " << allusrs[user_id]->get_Pswd() << " "; // проверить пароль
 				//allusrs[user_id]->Show();				
 				cout << endl;
 			}
 
-			// cout << "ник: " << allusrs[0]->get_Acc() << endl;  // проверить ник
-			// cout << "ник: " << allusrs[1]->get_Acc() << endl;  // проверить ник
-			// cout << "ник: " << allusrs[2]->get_Acc() << endl;  // проверить ник
 			cout << "Всего пользователей зарегистрировано: " << allusrs.size() << endl;
 			std::cout << "До встречи! Завершение работы..." << endl;
 			break;

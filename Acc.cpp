@@ -13,6 +13,15 @@ void Acc::set_Pswd(const string pswd)
 {
 	_pswd = pswd;
 }
+void Acc::setLastReadMsg(const int lastReadMsg)
+{
+	_lastReadMsg = lastReadMsg;
+}
+const int Acc::getLastReadMsg(void)
+{
+	return _lastReadMsg; // Получить номер последнего прочитанного сообщения
+}
+
 const  string NewUser::get_Acc() const
 {
 	return _acc;
