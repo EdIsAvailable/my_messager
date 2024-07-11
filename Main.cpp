@@ -2,20 +2,21 @@
 #include <vector>
 #include <string>
 #include <time.h>
+#ifndef __GCC__
 #include <windows.h>
+#endif // __GCC__
 #include "Acc.h"
 #include "Chat.h"
 using namespace std;
 
 int main()
 {
-#ifdef __GCC__
+#if __GCC__
 	setlocale(LC_ALL, "ru_RU.UTF-8");
-#endif // GCC
-#ifndef __GCC__
+#else
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
-#endif // !GCC
+#endif // !__GCC__
 	int user_id = 0; // Счётчик учётных записей пользователей
 	int lastMsg = 0; // Счётчик отправленных сообщений
 	
