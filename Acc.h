@@ -4,8 +4,8 @@ using namespace std;
 class Acc : public NewUser
 {
 	//string& _login;
-	string& _pswd;
-	string& _name;
+	string _pswd;
+	string _name;
 public:
 	// Конструктор класса Acc создаёт пользователя с ником, паролем и именем
 	Acc(string& login, string& pswd, string& name);
