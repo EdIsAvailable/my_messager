@@ -36,3 +36,12 @@ void Acc::setName(const string name)
 
 	_name = name;  // Поменять имя пользователя
 }
+
+void Acc::setLastReadMsg(const int lastReadMsg)
+{
+	_lastReadMsg = lastReadMsg; // Устанавливаем номер последнего прочитанного сообщения
+}
+const int Acc::getLastReadMsg(void)
+{
+	return _lastReadMsg; // Получить номер последнего прочитанного сообщения
+}
