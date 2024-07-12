@@ -29,7 +29,16 @@ void Message::Show(void)
 		" " + std::to_string(t_m->tm_hour) + ":" + std::to_string(t_m->tm_min) + ":" + std::to_string(t_m->tm_sec);
 	cout << "Содержимое: " << _text << " отправитель: " << _userFrom << " получатель: " << _userTo << " отправлено: " << dateSent << endl;
 }
-
+// Получить имя получателя сообщения
+string Message::getUserTo(void)
+{
+	return _userTo;
+}
+// Получить имя отправителя сообщения
+string Message::getUserFrom(void)
+{
+	return _userFrom;
+}
 Message::~Message()
 {
 	
