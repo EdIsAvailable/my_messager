@@ -17,7 +17,7 @@ void Chat::AddMessage(string userFrom, string userTo, string text)
 
 void Chat::ViewAllMessages(void)
 {
-	int msgId = _messages.size();
+	int msgId = (int)_messages.size();
 	cout << "Всего сообщений в базе: " << msgId << endl;
 
 	// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
@@ -25,5 +25,15 @@ void Chat::ViewAllMessages(void)
 		_messages[msgId]->Show();  // Выводим содержимое вектора сообщений
 	}
 }
+void Chat::ViewMessagesForUser(string login)
+{
+	// Вывод сообщений для пользователя login из вектора сообщений
+	int msgId = (int)_messages.size();
+	// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
+	while (msgId--) {  // Обратный отсчёт
+		if(_messages[msgId]->getUserTo() == login)
+			_messages[msgId]->Show(); // Выводим содержимое вектора сообщений
+	}
 
+}
 Chat::~Chat() {};

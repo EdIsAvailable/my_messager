@@ -9,9 +9,10 @@ class Chat
 	vector<Message*> _messages;
 public:
 	Chat();
-	vector<Message*> GetMessagesForAll();
-	vector<Message*> GetMessagesForUser(string login);
+	//vector<Message*> GetMessagesForAll();
+	//vector<Message*> GetMessagesForUser(string login);
 	void AddMessage(string userFrom, string userTo, string text);
-	void ViewAllMessages(void); // Вывод всех сообщений из вектора
+	void ViewAllMessages(void); // Вывод всех сообщений из вектора сообщений
+	void ViewMessagesForUser(string login); // Вывод сообщений для пользователя login из вектора сообщений
 	~Chat();
 };

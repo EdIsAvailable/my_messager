@@ -67,6 +67,7 @@ Acc* Server::ProcessAuthorization()
 	}
 
 	std::cout << "Пользователь авторизован!" << endl;
+	_msgRepo->ViewMessagesForUser(login);
 
 	return user;
 }
