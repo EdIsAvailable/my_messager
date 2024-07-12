@@ -15,4 +15,15 @@ void Chat::AddMessage(string userFrom, string userTo, string text)
     //cout << "чат: " << msg << endl;
 }
 
+void Chat::ViewAllMessages(void)
+{
+	int msgId = _messages.size();
+	cout << "Всего сообщений в базе: " << msgId << endl;
+
+	// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
+	while (msgId--) {  // Обратный отсчёт
+		_messages[msgId]->Show();  // Выводим содержимое вектора сообщений
+	}
+}
+
 Chat::~Chat() {};

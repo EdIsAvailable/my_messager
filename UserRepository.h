@@ -11,7 +11,7 @@ public:  UserRepository();
 		Acc* FindUser(string login);
 		Acc* AuthorizeUser(string login, string pwd);
 		int getSize(); // Получить количество зарегистрированных пользователей
-		void UsersList(void);
+		void UsersList(void); // Вывод списка зарегистрированных пользователей
 		~UserRepository();
 };
 

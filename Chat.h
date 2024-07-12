@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 #include <vector>
 #include <string>
@@ -12,6 +12,6 @@ public:
 	vector<Message*> GetMessagesForAll();
 	vector<Message*> GetMessagesForUser(string login);
 	void AddMessage(string userFrom, string userTo, string text);
-
+	void ViewAllMessages(void); // Вывод всех сообщений из вектора
 	~Chat();
 };

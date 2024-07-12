@@ -36,6 +36,11 @@ void Server::MainProcess()
 			break;
 		}
 		case 'e': {
+			// Вывод всех зарегистрированных пользователей
+			_userRepo->UsersList();
+			// Вывод всех отправленных сообщений
+			_msgRepo->ViewAllMessages();
+
 			process = false;
 			break;
 		}
@@ -73,8 +78,10 @@ void Server::ProcessChat(Acc* user)
 	string userTo;
 
 	_userRepo->UsersList();
-	//std::cout << "Выберите адресата сообщения от 0 (общий чат) до " << (allusrs.size() - 1) << ": ";
+	std::cout << "Выберите адресата сообщения: ";
 	std::cin >> userTo; // Указываем адресата сообщения
+
+	//Acc* accTo = _userRepo->FindUser(userTo);
 
 	cout << "Введите сообщение: ";
 	cin.get(); // Очистить буфер ввода перед чтением строки

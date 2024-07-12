@@ -4,6 +4,10 @@ using namespace std;
 UserRepository::UserRepository()
 {
 	//_users = { };
+	string login = "ALL", pwd = "---***---", name = "Общий чат";
+	Acc* publicChat = new Acc(login, pwd, name);
+	
+	_users.push_back(publicChat);
 }
 
 Acc* UserRepository::NewUser()
@@ -11,7 +15,8 @@ Acc* UserRepository::NewUser()
 	string login, pwd, name;
 
 	std::cout << "Введите имя: " << endl;
-	std::cin >> name;
+	std::cin.get(); // Очистить буфер ввода перед чтением строки
+	getline(cin, name); // Читаем строку ФИО для регистрации пользователя
 	std::cout << "Придумайте логин: " << endl;
 	std::cin >> login;
 	std::cout << "Создайте пароль: " << endl;
@@ -66,7 +71,7 @@ void UserRepository::UsersList(void)
 	cout << "Зарегистрированные пользователи, всего: " << dest_uid << " шт." << endl;
 	while (dest_uid--) {
 		// Выводим список зарегистрированных пользователей, пока вектор не пуст и последний элемент равен нулю
-		cout << dest_uid << ".\tИмя: \t\t" << _users[dest_uid]->getName();  // вывести имя
+		cout << dest_uid << ".\tLogin: \t"<< _users[dest_uid]->get_Login() << "\tИмя: \t\t" << _users[dest_uid]->getName();  // вывести имя
 		cout << endl;
 	}
 }
