@@ -4,8 +4,9 @@ using namespace std;
 class Acc : public NewUser
 {
 	//string& _login;
-	string _pswd;
-	string _name;
+	string _pswd; // Пароль пользователя
+	string _name; // Имя пользователя
+	int _lastReadMsg; // Последнее прочитанное сообщение из вектора сообщений
 public:
 	// Конструктор класса Acc создаёт пользователя с ником, паролем и именем
 	Acc(string& login, string& pswd, string& name);
@@ -17,5 +18,7 @@ public:
 	const  string getName() const; // Получить имя пользователя
 	void setName(const string name);  // Поменять имя пользователя
 	bool CheckPassword(string& pwd);
-	~Acc() {};;
+	void setLastReadMsg(const int lastReadMsg); // Устанавливаем номер последнего прочитанного сообщения
+	const int getLastReadMsg(void); // Получить номер последнего прочитанного сообщения
+	~Acc() {}; // Деструктор класса
 };
