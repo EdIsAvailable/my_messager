@@ -26,11 +26,12 @@ Acc* UserRepository::NewUser()
 
 Acc* UserRepository::FindUser(string login)
 {
-	for (int i = 0; i < sizeof _users; i++)
+	for (size_t i = 0; i < _users.size(); i++)
 	{
-		Acc* user = _users[i];
-		if (user->get_Login() == login)
-			return user;
+		//Acc* user = _users[i];
+		//if (user->get_Login() == login)
+		if (_users[i]->get_Login() == login)
+			return _users[i];
 	}
 
 	return NULL;

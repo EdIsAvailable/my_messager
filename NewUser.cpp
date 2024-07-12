@@ -7,8 +7,8 @@ const  string NewUser::get_Login() const
 {
 	return _login;
 }
-void NewUser::set_Login(const string acc)
+void NewUser::set_Login(const string login)
 {
-
+	_login = login;
 	cout << "Логин:  " << _login << endl;
 }

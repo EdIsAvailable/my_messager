@@ -60,6 +60,8 @@ Acc* Server::ProcessAuthorization()
 		return NULL;
 	}
 
+	std::cout << "Пользователь авторизован!" << endl;
+
 	return user;
 }
 
