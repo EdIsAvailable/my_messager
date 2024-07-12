@@ -34,6 +34,16 @@ void Chat::ViewMessagesForUser(string login)
 		if(_messages[msgId]->getUserTo() == login)
 			_messages[msgId]->Show(); // Выводим содержимое вектора сообщений
 	}
-
+}
+// Вывод сообщений адресованых всем пользователям из вектора сообщений
+void Chat::ViewMessagesForAllUsers(void)
+{
+	// Вывод сообщений для пользователя login из вектора сообщений
+	int msgId = (int)_messages.size();
+	// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
+	while (msgId--) {  // Обратный отсчёт
+		if (_messages[msgId]->getUserTo() == "ALL")
+			_messages[msgId]->Show(); // Выводим содержимое вектора сообщений
+	}
 }
 Chat::~Chat() {};
