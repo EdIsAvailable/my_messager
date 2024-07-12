@@ -5,7 +5,7 @@ using namespace std;
 #pragma once
 class Message
 {
-	string _userFrom, _userTo, _text; //тут добавить геттеры
+	string _userFrom, _userTo, _text; //С‚СѓС‚ РґРѕР±Р°РІРёС‚СЊ РіРµС‚С‚РµСЂС‹
 	time_t _now;
 public:
 	Message(string userFrom, string userTo, string text);
