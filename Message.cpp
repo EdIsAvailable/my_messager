@@ -1,4 +1,6 @@
 #include "Message.h"
+#pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS для localtime
+
 Message::Message(string userFrom, string userTo, string text) : _userFrom(userFrom), _userTo(userTo), _text(text)
 {
     // Определяем переменные для работы с датой и временем

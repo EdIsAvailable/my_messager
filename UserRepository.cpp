@@ -55,6 +55,21 @@ Acc* UserRepository::AuthorizeUser(string login, string pwd)
 
 	return user;
 }
+int UserRepository::getSize(void)
+{
+	return _users.size();
+}
+void UserRepository::UsersList(void)
+{
+	// Всего пользователей
+	int dest_uid = _users.size();
+	cout << "Зарегистрированные пользователи, всего: " << dest_uid << " шт." << endl;
+	while (dest_uid--) {
+		// Выводим список зарегистрированных пользователей, пока вектор не пуст и последний элемент равен нулю
+		cout << dest_uid << ".\tИмя: \t\t" << _users[dest_uid]->getName();  // вывести имя
+		cout << endl;
+	}
+}
 
 UserRepository::~UserRepository()
 {
