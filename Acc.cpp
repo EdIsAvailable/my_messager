@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Acc::Acc(string& login, string& pswd, string& name) : NewUser(login), _pswd(pswd), _name(name)
+Acc::Acc(string& login, string& pswd, string& name) : NewUser(login), _pswd(pswd), _name(name), _lastReadMsg(0)
 {}
 void Acc::Show() { cout << "Пароль " << _pswd << endl; }
 const  string Acc::get_Pswd() const

@@ -3,6 +3,7 @@
 Server::Server()
 {
 	_userRepo = new UserRepository();
+	_msgRepo = new Chat();
 };
 
 void Server::MainProcess()
@@ -69,10 +70,17 @@ void Server::ProcessChat(Acc* user)
 {
 	string text; // Тело сообщения для отправки
 	string userFrom = user->get_Login();
+	string userTo;
+
+	_userRepo->UsersList();
+	//std::cout << "Выберите адресата сообщения от 0 (общий чат) до " << (allusrs.size() - 1) << ": ";
+	std::cin >> userTo; // Указываем адресата сообщения
+
 	cout << "Введите сообщение: ";
 	cin.get(); // Очистить буфер ввода перед чтением строки
 	getline(cin, text); // Читаем строку тела сообщения для отправки
 	// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
+	_msgRepo->AddMessage(userFrom, userTo, text);
 	//allmsgs.push_back(new Chat(current_uid, dest_uid, newmsgs));
 	//lastMsg++; // Увеличиваем счётчик сообщений
 }

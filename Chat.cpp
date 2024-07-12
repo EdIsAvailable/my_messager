@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+Chat::Chat() {}
 //Chat::Chat(vector<Message*> _messages) : _messages(messages) {}
 
 //Chat::Chat(vector<Message*> GetMessagesForAll) : _GetMessagesForAll{}
