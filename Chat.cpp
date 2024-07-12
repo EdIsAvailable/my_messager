@@ -8,6 +8,10 @@ using namespace std;
 
 //Chat::vector<Message*> GetMessagesForUser(string login){}
 
-void Chat::AddMessage(Message* msg) { cout << "чат: " << msg << endl; }
+void Chat::AddMessage(string userFrom, string userTo, string text) 
+{
+    _messages.push_back(new Message(userFrom, userTo, text));
+    //cout << "чат: " << msg << endl;
+}
 
 Chat::~Chat() {};

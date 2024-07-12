@@ -11,7 +11,7 @@ public:
 	Chat();
 	vector<Message*> GetMessagesForAll();
 	vector<Message*> GetMessagesForUser(string login);
-	void AddMessage(Message* msg);
+	void AddMessage(string userFrom, string userTo, string text);
 
 	~Chat();
 };
