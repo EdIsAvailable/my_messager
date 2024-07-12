@@ -14,8 +14,8 @@ public:
 	void set_Pswd(const string pwd);
 	/*const  string get_Login() const;
 	void set_Login(const string login);*/
-	const  string get_Name() const;
-	void set_Name(const string name);
+	const  string getName() const; // Получить имя пользователя
+	void setName(const string name);  // Поменять имя пользователя
 	bool CheckPassword(string& pwd);
 	~Acc() {};;
 };

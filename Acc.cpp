@@ -23,3 +23,16 @@ bool Acc::CheckPassword(string& pwd)
 	return _pswd == pwd;
 }
 
+const string Acc::getName() const
+{
+	return _name; // Получить имя пользователя
+}
+
+void Acc::setName(const string name)
+{
+	//check if null then throw
+	if (name.size() == 0)
+		throw ("укажите имя");
+
+	_name = name;  // Поменять имя пользователя
+}
