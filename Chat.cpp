@@ -25,18 +25,29 @@ void Chat::ViewAllMessages(void)
 		_messages[msgId]->Show();  // Выводим содержимое вектора сообщений
 	}
 }
-void Chat::ViewMessagesForUser(string login)
+// Вывод сообщений для пользователя login из вектора сообщений
+void Chat::ViewMessagesForUser(Acc* user)
 {
-	// Вывод сообщений для пользователя login из вектора сообщений
-	int msgId = (int)_messages.size();
-	// Количество сообщений равно количеству зарегистрированных пользователей в данном тесте
-	while (msgId--) {  // Обратный отсчёт
-		if(_messages[msgId]->getUserTo() == login)
-			_messages[msgId]->Show(); // Выводим содержимое вектора сообщений
+	std::cout << "У вас есть новые сообщения для пользователя: ";
+	string login = user->get_Login(); // Получаем логин получателя сообщений
+	std::cout << login << " в прошлый раз Вы остановились на сообщении #: ";
+	int lastReadMsg = user->getLastReadMsg(); // Последнее прочитанное сообщение пользователем
+	//int firstMsg = 0;
+	std::cout << lastReadMsg << " всего сейчас в базе: ";
+	int msgId = (int)_messages.size(); // Получаем количество всех сообщений в векторе
+	std::cout << msgId << " сообщений.\n";
+	// Выводим сообщения пользователя от последнего прочитанного до последнего в векторе
+	while (lastReadMsg <  msgId) {
+		if(_messages[lastReadMsg]->getUserTo() == login)
+		{
+			_messages[lastReadMsg]->Show(); // Выводим содержимое вектора сообщений
+			user->setLastReadMsg(lastReadMsg); // 
+		}
+		lastReadMsg++;
 	}
 }
 // Вывод сообщений адресованых всем пользователям из вектора сообщений
-void Chat::ViewMessagesForAllUsers(void)
+void Chat::ViewMessagesForAllUsers(Acc* user)
 {
 	// Вывод сообщений для пользователя login из вектора сообщений
 	int msgId = (int)_messages.size();
