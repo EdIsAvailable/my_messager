@@ -2,6 +2,7 @@
 #include<iostream>
 #include <vector>
 #include <string>
+#include "Acc.h"
 #include "Message.h"
 using namespace std;
 class Chat
@@ -15,8 +16,8 @@ public:
 	// Вывод всех сообщений из вектора сообщений
 	void ViewAllMessages(void);
 	// Вывод сообщений для пользователя login из вектора сообщений
-	void ViewMessagesForUser(string login);
+	void ViewMessagesForUser(Acc* user);
 	// Вывод сообщений адресованых всем пользователям из вектора сообщений
-	void ViewMessagesForAllUsers(void);
+	void ViewMessagesForAllUsers(Acc* user);
 	~Chat();
 };
