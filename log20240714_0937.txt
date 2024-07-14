@@ -1,0 +1,249 @@
+$ valgrind  build/MyMessenger              
+==9385== Memcheck, a memory error detector
+==9385== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9385== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==9385== Command: build/MyMessenger
+==9385== 
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+c
+Введите имя: 
+Alex
+Придумайте логин: 
+alex
+Создайте пароль: 
+11 
+Пароль 11
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+c
+Введите имя: 
+Ed
+Придумайте логин: 
+ed
+Создайте пароль: 
+22
+Пароль 22
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+c
+Введите имя: 
+Eug
+Придумайте логин: 
+eu
+Создайте пароль: 
+33
+Пароль 33
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+a
+введите никнейм 
+alex
+введите пароль 
+11
+Пользователь авторизован!
+У вас есть новые сообщения для пользователя: alex в прошлый раз Вы остановились на сообщении #: 0 всего сейчас в базе: 0 сообщений.
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Выберите адресата сообщения: ed
+Введите сообщение: Test #1
+ 14-7-2024 9:32:14
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+a
+введите никнейм 
+ed
+введите пароль 
+22
+Пользователь авторизован!
+У вас есть новые сообщения для пользователя: ed в прошлый раз Вы остановились на сообщении #: 0 всего сейчас в базе: 1 сообщений.
+Содержимое: Test #1 отправитель: alex получатель: ed отправлено:  14-7-2024 9:32:14
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Выберите адресата сообщения: alex
+Введите сообщение: Test#2
+ 14-7-2024 9:32:31
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+a
+введите никнейм 
+alex
+введите пароль 
+11
+Пользователь авторизован!
+У вас есть новые сообщения для пользователя: alex в прошлый раз Вы остановились на сообщении #: 0 всего сейчас в базе: 2 сообщений.
+Содержимое: Test#2 отправитель: ed получатель: alex отправлено:  14-7-2024 9:32:31
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Выберите адресата сообщения: ed
+Введите сообщение: Test #3
+ 14-7-2024 9:32:43
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+a
+введите никнейм 
+alex
+введите пароль 
+11
+Пользователь авторизован!
+У вас есть новые сообщения для пользователя: alex в прошлый раз Вы остановились на сообщении #: 1 всего сейчас в базе: 3 сообщений.
+Содержимое: Test#2 отправитель: ed получатель: alex отправлено:  14-7-2024 9:32:31
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Выберите адресата сообщения: ed
+Введите сообщение: Test #4
+ 14-7-2024 9:33:6
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+a
+введите никнейм 
+ed
+введите пароль 
+22
+Пользователь авторизован!
+У вас есть новые сообщения для пользователя: ed в прошлый раз Вы остановились на сообщении #: 0 всего сейчас в базе: 4 сообщений.
+Содержимое: Test #1 отправитель: alex получатель: ed отправлено:  14-7-2024 9:32:14
+Содержимое: Test #3 отправитель: alex получатель: ed отправлено:  14-7-2024 9:32:43
+Содержимое: Test #4 отправитель: alex получатель: ed отправлено:  14-7-2024 9:33:6
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Выберите адресата сообщения: ed
+Введите сообщение: Test #5
+ 14-7-2024 9:33:56
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+a
+введите никнейм 
+ed
+введите пароль 
+22
+Пользователь авторизован!
+У вас есть новые сообщения для пользователя: ed в прошлый раз Вы остановились на сообщении #: 3 всего сейчас в базе: 5 сообщений.
+Содержимое: Test #4 отправитель: alex получатель: ed отправлено:  14-7-2024 9:33:6
+Содержимое: Test #5 отправитель: ed получатель: ed отправлено:  14-7-2024 9:33:56
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Выберите адресата сообщения: ed
+Введите сообщение: Test #6
+ 14-7-2024 9:35:24
+
+Создать аккаунт введите: 'c'
+Авторизоваться введите:  'a'
+Выход: 'e'
+e
+Зарегистрированные пользователи, всего: 4 шт.
+3.      Login:  eu      Имя:            Eug
+2.      Login:  ed      Имя:            Ed
+1.      Login:  alex    Имя:            Alex
+0.      Login:  ALL     Имя:            Общий чат
+Всего сообщений в базе: 6
+Содержимое: Test #6 отправитель: ed получатель: ed отправлено:  14-7-2024 9:35:24
+Содержимое: Test #5 отправитель: ed получатель: ed отправлено:  14-7-2024 9:33:56
+Содержимое: Test #4 отправитель: alex получатель: ed отправлено:  14-7-2024 9:33:6
+Содержимое: Test #3 отправитель: alex получатель: ed отправлено:  14-7-2024 9:32:43
+Содержимое: Test#2 отправитель: ed получатель: alex отправлено:  14-7-2024 9:32:31
+Содержимое: Test #1 отправитель: alex получатель: ed отправлено:  14-7-2024 9:32:14
+
+==9385== Conditional jump or move depends on uninitialised value(s)
+==9385==    at 0x403425: main (Main.cpp:33)
+==9385== 
+==9385== Use of uninitialised value of size 8
+==9385==    at 0x4066D3: std::vector<Message*, std::allocator<Message*> >::~vector() (stl_vector.h:567)
+==9385==    by 0x40662F: Chat::~Chat() (Chat.cpp:60)
+==9385==    by 0x40342E: main (Main.cpp:33)
+==9385== 
+==9385== Use of uninitialised value of size 8
+==9385==    at 0x4066DB: std::vector<Message*, std::allocator<Message*> >::~vector() (stl_vector.h:567)
+==9385==    by 0x40662F: Chat::~Chat() (Chat.cpp:60)
+==9385==    by 0x40342E: main (Main.cpp:33)
+==9385== 
+==9385== Use of uninitialised value of size 8
+==9385==    at 0x4067B6: std::_Vector_base<Message*, std::allocator<Message*> >::~_Vector_base() (stl_vector.h:286)
+==9385==    by 0x4066F4: std::vector<Message*, std::allocator<Message*> >::~vector() (stl_vector.h:570)
+==9385==    by 0x40662F: Chat::~Chat() (Chat.cpp:60)
+==9385==    by 0x40342E: main (Main.cpp:33)
+==9385== 
+==9385== Use of uninitialised value of size 8
+==9385==    at 0x4067BE: std::_Vector_base<Message*, std::allocator<Message*> >::~_Vector_base() (stl_vector.h:286)
+==9385==    by 0x4066F4: std::vector<Message*, std::allocator<Message*> >::~vector() (stl_vector.h:570)
+==9385==    by 0x40662F: Chat::~Chat() (Chat.cpp:60)
+==9385==    by 0x40342E: main (Main.cpp:33)
+==9385== 
+==9385== Use of uninitialised value of size 8
+==9385==    at 0x4067D2: std::_Vector_base<Message*, std::allocator<Message*> >::~_Vector_base() (stl_vector.h:285)
+==9385==    by 0x4066F4: std::vector<Message*, std::allocator<Message*> >::~vector() (stl_vector.h:570)
+==9385==    by 0x40662F: Chat::~Chat() (Chat.cpp:60)
+==9385==    by 0x40342E: main (Main.cpp:33)
+==9385== 
+==9385== Invalid free() / delete / delete[] / realloc()
+==9385==    at 0x4836EAB: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9385==    by 0x406FB3: __gnu_cxx::new_allocator<Message*>::deallocate(Message**, unsigned long) (new_allocator.h:125)
+==9385==    by 0x406CD7: std::allocator_traits<std::allocator<Message*> >::deallocate(std::allocator<Message*>&, Message**, unsigned long) (alloc_traits.h:462)
+==9385==    by 0x40696B: std::_Vector_base<Message*, std::allocator<Message*> >::_M_deallocate(Message**, unsigned long) (stl_vector.h:304)
+==9385==    by 0x4067E3: std::_Vector_base<Message*, std::allocator<Message*> >::~_Vector_base() (stl_vector.h:285)
+==9385==    by 0x4066F4: std::vector<Message*, std::allocator<Message*> >::~vector() (stl_vector.h:570)
+==9385==    by 0x40662F: Chat::~Chat() (Chat.cpp:60)
+==9385==    by 0x40342E: main (Main.cpp:33)
+==9385==  Address 0x56415741e5894855 is not stack'd, malloc'd or (recently) free'd
+==9385== 
+==9385== Conditional jump or move depends on uninitialised value(s)
+==9385==    at 0x4837041: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9385==    by 0x40343B: main (Main.cpp:33)
+==9385== 
+==9385== Invalid free() / delete / delete[] / realloc()
+==9385==    at 0x483708B: operator delete(void*, unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9385==    by 0x40343B: main (Main.cpp:33)
+==9385==  Address 0x400f540 is in the Text segment of /usr/lib/x86_64-linux-gnu/ld-2.28.so
+==9385==    at 0x400F540: _dl_fini (dl-fini.c:30)
+==9385== 
+==9385== 
+==9385== HEAP SUMMARY:
+==9385==     in use at exit: 1,250 bytes in 16 blocks
+==9385==   total heap usage: 112 allocs, 98 frees, 87,027 bytes allocated
+==9385== 
+==9385== LEAK SUMMARY:
+==9385==    definitely lost: 0 bytes in 0 blocks
+==9385==    indirectly lost: 0 bytes in 0 blocks
+==9385==      possibly lost: 0 bytes in 0 blocks
+==9385==    still reachable: 1,250 bytes in 16 blocks
+==9385==         suppressed: 0 bytes in 0 blocks
+==9385== Rerun with --leak-check=full to see details of leaked memory
+==9385== 
+==9385== For counts of detected and suppressed errors, rerun with: -v
+==9385== Use --track-origins=yes to see where uninitialised values come from
+==9385== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 0 from 0)
