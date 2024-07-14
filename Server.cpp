@@ -9,6 +9,8 @@ Server::Server()
 void Server::MainProcess()
 {
 	setlocale(LC_ALL, "ru_RU.UTF-8");
+	//setlocale(LC_ALL, "");
+	//system("chcp 1251");
 
 	bool process = true;
 	char menuOption;
