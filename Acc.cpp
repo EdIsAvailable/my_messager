@@ -4,23 +4,25 @@ using namespace std;
 
 Acc::Acc(string& login, string& pswd, string& name) : NewUser(login), _pswd(pswd), _name(name), _lastReadMsg(0)
 {}
-void Acc::Show() { cout << "Пароль " << _pswd << endl; }
-const  string Acc::get_Pswd() const
+void Acc::Show()
 {
-	return _pswd;
+	cout << "Пароль " << _pswd << endl; // Выводим на экран пароль пользователя
 }
-void Acc::set_Pswd(const string pwd)
+const  string Acc::getPswd() const
+{
+	return _pswd; // Получить пароль пользователя
+}
+void Acc::setPswd(const string pwd)
 {
 	//check if null then throw
 	if (pwd == " ")
 		throw ("не введён пароль");
-		
-
-	_pswd = pwd;
+	
+	_pswd = pwd; // Установить пароль пользователя
 }
 bool Acc::CheckPassword(string& pwd)
 {
-	return _pswd == pwd;
+	return _pswd == pwd; // Проверить пароль пользователя, верный или нет
 }
 
 const string Acc::getName() const

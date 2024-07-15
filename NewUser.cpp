@@ -2,13 +2,14 @@
 #include <iostream>
 using namespace std;
 
-
-const  string NewUser::get_Login() const
+// Получить логин пользователя
+const  string NewUser::getLogin() const
 {
 	return _login;
 }
-void NewUser::set_Login(const string login)
+// Установить и вывести логин пользователя
+void NewUser::setLogin(const string login)
 {
-	_login = login;
+	_login = login; 
 	cout << "Логин:  " << _login << endl;
 }
