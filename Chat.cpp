@@ -4,15 +4,12 @@ using namespace std;
 
 Chat::Chat() {}
 //Chat::Chat(vector<Message*> _messages) : _messages(messages) {}
-
 //Chat::Chat(vector<Message*> GetMessagesForAll) : _GetMessagesForAll{}
-
 //Chat::vector<Message*> GetMessagesForUser(string login){}
 
 void Chat::AddMessage(string userFrom, string userTo, string text) 
 {
     _messages.push_back(new Message(userFrom, userTo, text));
-    //cout << "чат: " << msg << endl;
 }
 
 void Chat::ViewAllMessages(void)
@@ -29,7 +26,7 @@ void Chat::ViewAllMessages(void)
 void Chat::ViewMessagesForUser(Acc* user)
 {
 	std::cout << "У вас есть новые сообщения для пользователя: ";
-	string login = user->get_Login(); // Получаем логин получателя сообщений
+	string login = user->getLogin(); // Получаем логин получателя сообщений
 	std::cout << login << " в прошлый раз Вы остановились на сообщении #: ";
 	int lastReadMsg = user->getLastReadMsg(); // Последнее прочитанное сообщение пользователем
 	//int firstMsg = 0;
@@ -57,4 +54,7 @@ void Chat::ViewMessagesForAllUsers(Acc* user)
 			_messages[msgId]->Show(); // Выводим содержимое вектора сообщений
 	}
 }
-Chat::~Chat() {};
+Chat::~Chat()
+{
+	_messages.clear();
+};

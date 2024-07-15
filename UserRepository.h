@@ -5,7 +5,7 @@
 
 class UserRepository
 {
-	vector<Acc*> _users;
+	vector<Acc*> _users; // Вектор для хранения всех пользователей
 public:  UserRepository();
 		Acc* NewUser();
 		Acc* FindUser(string login);

@@ -7,7 +7,7 @@
 using namespace std;
 class Chat
 {
-	vector<Message*> _messages;
+	vector<Message*> _messages; // Вектор для хранения всех сообщений пользователей
 public:
 	Chat();
 	//vector<Message*> GetMessagesForAll();

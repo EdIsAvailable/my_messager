@@ -3,7 +3,7 @@ using namespace std;
 
 UserRepository::UserRepository()
 {
-	//_users = { };
+	// Инициализируем и резервируем первого пользователя в векторе для Public Chat
 	string login = "ALL", pwd = "---***---", name = "Общий чат";
 	Acc* publicChat = new Acc(login, pwd, name);
 	
@@ -35,7 +35,7 @@ Acc* UserRepository::FindUser(string login)
 	{
 		//Acc* user = _users[i];
 		//if (user->get_Login() == login)
-		if (_users[i]->get_Login() == login)
+		if (_users[i]->getLogin() == login)
 			return _users[i];
 	}
 
@@ -71,7 +71,7 @@ void UserRepository::UsersList(void)
 	cout << "Зарегистрированные пользователи, всего: " << dest_uid << " шт." << endl;
 	while (dest_uid--) {
 		// Выводим список зарегистрированных пользователей, пока вектор не пуст и последний элемент равен нулю
-		cout << dest_uid << ".\tLogin: \t"<< _users[dest_uid]->get_Login() << "\tИмя: \t\t" << _users[dest_uid]->getName();  // вывести имя
+		cout << dest_uid << ".\tLogin: \t"<< _users[dest_uid]->getLogin() << "\tИмя: \t\t" << _users[dest_uid]->getName();  // вывести имя
 		cout << endl;
 	}
 }
@@ -80,6 +80,3 @@ UserRepository::~UserRepository()
 {
 	_users.clear();
 }
-
-
-
