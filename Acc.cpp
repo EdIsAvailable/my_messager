@@ -1,9 +1,14 @@
 #include "Acc.h"
 #include <iostream>
+#include<algorithm>
 using namespace std;
 
-Acc::Acc(string& login, string& pswd, string& name) : NewUser(login), _pswd(pswd), _name(name), _lastReadMsg(0)
-{}
+Acc::Acc(string& login, string& pswd, string& name) : NewUser(login)
+{
+	this->setPswd(pswd);
+	_name = name;
+	_lastReadMsg = 0;
+}
 void Acc::Show()
 {
 	cout << "Пароль " << _pswd << endl; // Выводим на экран пароль пользователя
@@ -14,11 +19,11 @@ const  string Acc::getPswd() const
 }
 void Acc::setPswd(const string pwd)
 {
-	//check if null then throw
-	if (pwd == " ")
-		std::cout << "не введён пароль" << std::endl;
-	
-	_pswd = pwd; // Установить пароль пользователя
+	if (!checkSymbols(pwd))
+	{
+		throw  "Содержится недопустимый символ";
+	}
+	_pswd = pwd;
 }
 bool Acc::CheckPassword(string& pwd)
 {
