@@ -16,7 +16,7 @@ void Acc::setPswd(const string pwd)
 {
 	//check if null then throw
 	if (pwd == " ")
-		throw ("не введён пароль");
+		std::cout << "не введён пароль" << std::endl;
 	
 	_pswd = pwd; // Установить пароль пользователя
 }

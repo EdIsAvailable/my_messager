@@ -29,7 +29,7 @@ void Server::MainProcess()
 		case 'a':
 		{
 			Acc* user = ProcessAuthorization();
-			if (user == NULL)
+			if (user == nullptr)
 				continue; //сюда возможно нужно добавить кщё один break, чтобы не было выхода из цикла
 
 			ProcessChat(user);
@@ -60,12 +60,6 @@ Acc* Server::ProcessAuthorization()
 
 	Acc* user = _userRepo->AuthorizeUser(login, pwd);
 
-	if (user == NULL)
-	{
-		std::cout << "неверно введён пароль" << endl;
-		return NULL;
-	}
-
 	std::cout << "Пользователь авторизован!" << endl;
 	_msgRepo->ViewMessagesForUser(user);
 	_msgRepo->ViewMessagesForAllUsers(user);
@@ -81,10 +75,22 @@ void Server::ProcessChat(Acc* user)
 	_userRepo->UsersList();
 	std::cout << "Выберите адресата сообщения: ";
 	std::cin >> userTo; // Указываем адресата сообщения
+	if (!_userRepo->FindUser(userTo))
+	{
+		std::cout << "Адресат с таким именем в сети не зарегестрированн\n" << std::endl;
+	}
+	else
+	{
+		cout << "Введите сообщение: ";
+		cin.get(); // Очистить буфер ввода перед чтением строки
+		getline(cin, text); // Читаем строку тела сообщения для отправки
+		// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
+		_msgRepo->AddMessage(userFrom, userTo, text);
+	}
+}
 
-	cout << "Введите сообщение: ";
-	cin.get(); // Очистить буфер ввода перед чтением строки
-	getline(cin, text); // Читаем строку тела сообщения для отправки
-	// "Отправляем сообщение" - Добавляем очередное сообщение в вектор
-	_msgRepo->AddMessage(userFrom, userTo, text);
+Server::~Server()
+{
+	delete _userRepo;
+	delete _msgRepo;
 }

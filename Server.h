@@ -9,6 +9,7 @@ class Server
 
 public: Server();
 		void MainProcess();
+		~Server();
 
 private: Acc* ProcessAuthorization();
 		 void ProcessChat(Acc* user);

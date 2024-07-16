@@ -39,23 +39,23 @@ Acc* UserRepository::FindUser(string login)
 			return _users[i];
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 Acc* UserRepository::AuthorizeUser(string login, string pwd)
 {
 	Acc* user = FindUser(login);
 
-	if (user == NULL)
+	if (user == nullptr)
 	{
 		std::cout << "Пользователь не найден!!!" << endl;
-		return NULL;
+		return nullptr;
 	}
 
 	if (!(user->CheckPassword(pwd)))
 	{
 		std::cout << "Неправильный пароль" << endl;
-		return NULL;
+		return nullptr;
 	}
 
 	return user;
@@ -78,5 +78,9 @@ void UserRepository::UsersList(void)
 
 UserRepository::~UserRepository()
 {
+	for (Acc* tmp_acc : _users)
+	{
+		delete tmp_acc;
+	}
 	_users.clear();
 }
