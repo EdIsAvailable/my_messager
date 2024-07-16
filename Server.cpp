@@ -53,12 +53,17 @@ void Server::MainProcess()
 Acc* Server::ProcessAuthorization()
 {
 	string login, pwd;
-	std::cout << "введите никнейм " << endl;
+	std::cout << "введите логин " << endl;
 	std::cin >> login;
 	std::cout << "введите пароль " << endl;
 	std::cin >> pwd;
 
 	Acc* user = _userRepo->AuthorizeUser(login, pwd);
+
+	if (user == nullptr)
+	{
+		return nullptr;
+	}
 
 	std::cout << "Пользователь авторизован!" << endl;
 	_msgRepo->ViewMessagesForUser(user);
@@ -75,7 +80,7 @@ void Server::ProcessChat(Acc* user)
 	_userRepo->UsersList();
 	std::cout << "Выберите адресата сообщения: ";
 	std::cin >> userTo; // Указываем адресата сообщения
-	if (!_userRepo->FindUser(userTo))
+	if (!_userRepo->FindUser(userTo))         //  Проверка что данный адресат существует в сети 
 	{
 		std::cout << "Адресат с таким именем в сети не зарегестрированн\n" << std::endl;
 	}

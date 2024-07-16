@@ -18,9 +18,9 @@ Acc* UserRepository::NewUser()
 	std::cin.get(); // Очистить буфер ввода перед чтением строки
 	getline(cin, name); // Читаем строку ФИО для регистрации пользователя
 	std::cout << "Придумайте логин: " << endl;
-	std::cin >> login;
+	getline(cin, login);
 	std::cout << "Создайте пароль: " << endl;
-	std::cin >> pwd;
+	getline(cin, pwd);
 	Acc* newUser = new Acc(login, pwd, name);
 	newUser->Show();
 
@@ -48,7 +48,7 @@ Acc* UserRepository::AuthorizeUser(string login, string pwd)
 
 	if (user == nullptr)
 	{
-		std::cout << "Пользователь не найден!!!" << endl;
+		std::cout << "Пользователь с логином " << login << " в сети не найден!!!" << endl;
 		return nullptr;
 	}
 
