@@ -56,9 +56,5 @@ void Chat::ViewMessagesForAllUsers(Acc* user)
 }
 Chat::~Chat()
 {
-	for (Message* tmp_msg : _messages)
-	{
-		delete tmp_msg;
-	}
 	_messages.clear();
 };

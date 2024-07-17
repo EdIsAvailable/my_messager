@@ -21,7 +21,7 @@ void Acc::setPswd(const string pwd)
 {
 	if (!checkSymbols(pwd))
 	{
-		throw  "Содержится недопустимый символ";
+		//throw  "Содержится недопустимый символ";
 	}
 	_pswd = pwd;
 }

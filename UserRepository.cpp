@@ -21,12 +21,19 @@ Acc* UserRepository::NewUser()
 	getline(cin, login);
 	std::cout << "Создайте пароль: " << endl;
 	getline(cin, pwd);
-	Acc* newUser = new Acc(login, pwd, name);
-	newUser->Show();
+	try
+	{
+		Acc* newUser = new Acc(login, pwd, name);
+		newUser->Show();
 
-	_users.push_back(newUser);
+		_users.push_back(newUser);
 
-	return newUser;
+		return newUser;
+	}
+	catch (const char* c)
+	{
+		cout << c << endl;
+	}
 }
 
 Acc* UserRepository::FindUser(string login)

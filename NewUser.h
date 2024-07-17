@@ -6,14 +6,6 @@ class NewUser
 {
 protected: string _login; // Логин пользователя
 
-struct TestFunctor
-{
-	bool stringIsCorrect;
-	TestFunctor():stringIsCorrect(true){}
-
-	void operator() (char ch);
-};
-
 public:
 	NewUser() = default;
 	NewUser(const string& login);
