@@ -19,7 +19,7 @@ void NewUser::setLogin(const string login)
 {
 	if (!checkSymbols(login))
 	{
-		throw  "Содержится недопустимый символ";
+		throw  "Содержится недопустимый символ, попробуйте ещё раз";
 	}
 	_login = login;
 }

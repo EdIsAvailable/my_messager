@@ -4,7 +4,7 @@ using namespace std;
 UserRepository::UserRepository()
 {
 	// Инициализируем и резервируем первого пользователя в векторе для Public Chat
-	string login = "ALL", pwd = "---***---", name = "Общий чат";
+	string login = "ALL", pwd = "example", name = "Общий чат";
 	Acc* publicChat = new Acc(login, pwd, name);
 	
 	_users.push_back(publicChat);
